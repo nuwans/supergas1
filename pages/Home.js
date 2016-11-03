@@ -68,6 +68,7 @@ export default class Home extends React.Component {
               labelName="Connection Type"
               error={this.state.PincodeError}
               name="ConnectionType"
+              options={['13 KG','14 KG', '15 KG']}
               handler={this.handleTextInput.bind(this)} 
             />
             : ''
