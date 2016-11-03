@@ -8,6 +8,7 @@
   margin-bottom:16px;
   margin-right:16px;
   margin-left:16px;
+  font-weight: 100;
 }
 
 .inputMaterial {
@@ -15,6 +16,7 @@
   display: block;
   width: 100%;
   border: none;
+  padding-bottom: 7px;
   border-bottom: 1px solid #ABABAB;
   background: none;
 }
@@ -296,44 +298,44 @@ select:focus{
 /*First screen default content*/
 
 .default_content{
-    width: 90%; 
-    margin: 50px 5%;
-    display: block;
+    width: auto;
+    margin: 16px;
     background: #ffffff;
-    min-height: 400px;
-    border-radius: 4px;
-    
+    padding-top: 8px;
+    padding-bottom: 16px;
+    border-radius: 2px;
     font-weight: 400;
 }
 .d_form{
-    width: auto;
+    width: 100%;
     /*border:2px solid green;*/
 }
 .d_c_element{
-    height: 100px;
-    width: 100%;
-    padding: 5px 0;
-    font-size: 28px;
-    float: left;
+    position: relative;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
     color: #688590;
-   /* border: 1px solid black;*/
+   font-weight: 100;
 }
 .icon{
-    width: 15%;
-    float: left;
-    margin-top: 15px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
 }
 .d_c_e_item{
-    float: left;
-    line-height: 100px;
-    padding: 5px 2%;
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top: 12px;
 
-    margin-bottom: 1px;
     /*border: 2px solid green;*/
 
 }
 .icon img{
-    height: auto;
+    width: 100%;
 }
 .model_w{
     display: block;
@@ -350,13 +352,12 @@ select:focus{
 }
 .m_w_content{
     background: #ffffff;
-    width: 600px;
-    font-size: 28px;
+    font-size: 14px;
     color: #ababab;
-    margin: auto;
-    margin-top: 45px;
-    padding: 30px 10px;
-    height: 400px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 112px;
+    padding:24px 12px 16px 12px;
 }
 .m_w_label{
     margin-bottom: 20px;
@@ -367,9 +368,8 @@ select:focus{
 }
 .mw_input{
     border: none;
-    width: 300px;
     height: 60px;
-    font-size: 32px;
+    font-size: 16px;
      border-bottom: 2px solid #e6ffff;
     padding: 5px 10px;
     margin-bottom: 40px;
@@ -384,7 +384,6 @@ select:focus{
     margin-right: 15px;
     background-color: #ffffff;
     border: none;
-    font-size: 28px;
 }
 .mw_input:focus{
     outline: none;
