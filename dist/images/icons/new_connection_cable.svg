@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>D3338A83-0F40-428C-8441-A56641601ED3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M4.10996241,56.2863609 L4.10996241,60.2296089 C4.10996241,61.3246927 4.98966165,62.2007598 6.08928571,62.2007598 L32.3336466,62.2007598 C33.4332707,62.2007598 34.3129699,61.3246927 34.3129699,60.2296089 L34.3129699,56.2863609 C36.7503974,55.0776165 38.1983083,52.7835297 38.1983083,48.4757095 L38.1983083,21.6826592 C38.1983083,11.2428603 29.6945489,10.0017654 19.2114662,10.0017654 C8.72838346,10.0017654 0.22462406,11.2428603 0.22462406,21.6826592 L0.22462406,48.4757095 C0.22462406,52.7835297 1.67253497,55.0776165 4.10996241,56.2863609 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="37.9736842" height="52.1989944" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Refill_Tab" transform="translate(-84.000000, -1010.000000)">
+            <g id="Group-6-Copy-3" transform="translate(48.000000, 972.000000)">
+                <g id="Group-5">
+                    <g id="Group-7" transform="translate(36.000000, 38.000000)">
+                        <g id="gas" transform="translate(16.000000, 3.000000)">
+                            <g id="Group" transform="translate(0.752820, 3.102737)">
+                                <rect id="Rectangle-path" fill="#AAC1DB" x="15.9478383" y="0.0730055866" width="6.52725564" height="13.068"></rect>
+                                <rect id="Rectangle-path" stroke="#AAC1DB" fill="#AAC1DB" x="27.181391" y="0.0730055866" width="1.68609023" height="13.068"></rect>
+                                <rect id="Rectangle-path" stroke="#AAC1DB" fill="#AAC1DB" x="9.55545113" y="0.0730055866" width="1.68609023" height="13.068"></rect>
+                                <use id="Combined-Shape" stroke="#AAC1DB" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
+                            </g>
+                            <g id="Group" transform="translate(0.904135, 0.000000)" fill="#AAC1DB">
+                                <path d="M30.7894737,4.48984358 L7.33082707,4.48984358 C6.08458647,4.48984358 5.13157895,3.46776536 5.13157895,2.29967598 L5.13157895,2.29967598 C5.13157895,1.05858101 6.15789474,0.10950838 7.33082707,0.10950838 L30.7894737,0.10950838 C32.0357143,0.10950838 32.9887218,1.13158659 32.9887218,2.29967598 L32.9887218,2.29967598 C32.9887218,3.54077095 32.0357143,4.48984358 30.7894737,4.48984358 L30.7894737,4.48984358 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
