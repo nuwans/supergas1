@@ -1,6 +1,8 @@
 import React from "react";
 import {Link } from "react-router";
-import Input from '../components/TextInput';
+//import Input from '../components/TextInput';
+import FloatingInputCenter from '../components/FloatingInputCenter';
+
 import Select from '../components/Select';
 export default class Home extends React.Component {
 
@@ -8,7 +10,8 @@ export default class Home extends React.Component {
     super(props, context)
     this.state = {
       phoneNumber:'4556565',
-      modalIsOpen:true
+      modalIsOpen:true,
+      error:'ssss'
 
     }
   } 
@@ -43,7 +46,13 @@ export default class Home extends React.Component {
             <div className="m_w_content">
                 <div className="m_w_label"> We have sent an OTP to</div>
                 <div className="m_w_number"> {this.state.phoneNumber}</div>
-                <input  type="text" className="mw_input"  placeholder="Enter OTP"></input>
+                <FloatingInputCenter 
+                  labelName="Enter OTP"
+                  type="text"
+                  error={false}
+                  name="OTP"
+                  handler={this.handleChange.bind(this)} 
+                />
                 <div className="m_w_toolbar">
                     <button className="mw_button">CLOSE</button>
                     <button className="mw_button">VERIFY</button>
