@@ -41,7 +41,7 @@ export default class Select extends React.Component {
     return (
         <div className="top_dropdown" onMouseLeave={this.closeDropDown.bind(this)} >
             <div className="sel_number">
-                <div className="selected_op">iD #{this.state.selectedIndex}( {this.state.value} )</div>
+                <div className="selected_op">ID #{this.state.selectedIndex}( {this.state.value} )</div>
                 <div className="open_dd" onClick={this.openDropDown.bind(this)}><img src="./images/icons/account_dropdown.svg"></img></div>
             </div>
             {this.state.open ?
