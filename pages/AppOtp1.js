@@ -21,7 +21,7 @@ class App extends React.Component {
     const { location } = this.props;
     return (
       <div className="main_wrapper">
-        <Header actions={this.props.actions}  user={this.props.user}></Header>
+        {/*<Header actions={this.props.actions}  user={this.props.user}></Header>*/}
         <div  className="content_wrap">
           <SelectNumber name='number' handler={this.selectPhoneNumber.bind(this)}  numbers={numbers}></SelectNumber>
           {this.props.children}

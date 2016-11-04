@@ -13,7 +13,7 @@ export default class Radio extends React.Component {
             <div className="c_r_r">
                 <input  type="radio"  onChange={this.handleTextChange.bind(this)} value={this.props.value} checked={this.props.checked}></input>
             </div>
-            <div className="c_r_label">{this.props.value}</div>
+            <div className="c_r_label"><span>{this.props.value}</span></div>
         </div>
     );
   }
