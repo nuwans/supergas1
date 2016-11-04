@@ -55,7 +55,7 @@ export default class Home extends React.Component {
           
          
           <div className="half_wrap">
-             <div className="half">
+             <div className="half left">
               <FloatingInput 
                 labelName="Date"
                 type="date"
@@ -65,7 +65,7 @@ export default class Home extends React.Component {
                 handler={this.handleChange.bind(this)} 
               />
              </div>
-             <div className="half">
+             <div className="half right">
               <FloatingSelect 
                   labelName="Dilivary Slot"
                   error={false}

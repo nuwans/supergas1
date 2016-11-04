@@ -1,7 +1,7 @@
 import React from "react";
 import {Link } from "react-router";
 import Radio from '../components/Radio';
-import Input from '../components/TextInput';
+import FloatingInput from '../components/FloatingInput';
 const ComplainOptions=[
     'Gas has not been delivered yet.',
     'I booked a new connection. I didn’t get any response yet.',
@@ -44,11 +44,20 @@ export default class Complains extends React.Component {
     return (
       <div className="content">
         <div className="form">
+          <div className="comp_title">What issue are you facing?</div>
           {this.getRadioOptions()}
           {this.state.option=='Others' ?
-            <Input  type="text" handler={this.handleTextChange.bind(this)} name='otherComplain' placeholder="Type your complaint"></Input>:''
+            <FloatingInput 
+            labelName="Type Your Complaint"
+            type="text"
+            error={false}
+            name="otherComplain"
+            handler={this.handleTextChange.bind(this)} 
+          /> :''
           }
-          <button className="f_btn">REGISTER COMPLAINT</button>
+          <div className="group">
+            <button className="f_btn">REGISTER COMPLAINT</button>
+          </div>
         </div>
       </div>
     );
