@@ -10,13 +10,13 @@ class App extends React.Component {
 
   }  
   render() {
-    const { location } = this.props;
+    const { location,router} = this.props;
     return (
       <div className="main_wrapper">
         {/*<Header actions={this.props.actions} user={this.props.user}></Header>*/}
         <div  className="content_wrap">
           {this.props.children}
-          <BottomForm/>
+          <BottomForm router={router}/>
         </div>
       </div>
     );

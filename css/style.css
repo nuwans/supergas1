@@ -131,7 +131,7 @@ body{
    position: relative;
    margin: 0 15px;
    display: block;
-   height: 90px;
+   height: 80px;
 
    }
  
@@ -160,11 +160,12 @@ body{
 }
 .h_content{
     position: absolute;
-    top:15px;
+    top:30px;
     left: 110px;
     width: auto;
+
     height: auto;
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
   
@@ -262,6 +263,7 @@ body{
     color: #ffffff;
     padding-top: 17px;
     padding-bottom: 17px;
+    font-family: 'Roboto';
     border: none;
     margin: 0px auto;
     text-transform: uppercase;
@@ -302,7 +304,7 @@ select:focus{
     margin: 16px;
     background: #ffffff;
     padding-top: 8px;
-    padding-bottom: 16px;
+    
     border-radius: 2px;
     font-weight: 400;
 }
@@ -317,6 +319,7 @@ select:focus{
     padding-right: 16px;
     color: #688590;
    font-weight: 100;
+   border-bottom: 1px solid #efefef;
 }
 .icon{
     width: 24px;
@@ -345,7 +348,7 @@ select:focus{
     text-align: center;
     left: 0;
     width: 100%; /* Full width */
-    height:100%; /* Full height */
+    padding-bottom: 100px;
     overflow: auto; /* Enable scroll if needed */
     background-color:#ffffff; /* Fallback color */
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
