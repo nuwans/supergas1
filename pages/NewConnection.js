@@ -32,6 +32,9 @@ export default class Home extends React.Component {
     temp[name]=value;
     this.setState(temp);
   }
+  GetNewConnection(){
+    this.props.router.push('/booking');
+  }
   render() {
     return (
       <div className="content">
@@ -73,9 +76,16 @@ export default class Home extends React.Component {
             />
             : ''
            }
-          <div className="group">
-            <button onClick={this.ValidatePin.bind(this)} className="f_btn">Next</button>
-          </div>
+           { this.state.showForm ? 
+              <div className="group">
+                <button onClick={this.GetNewConnection.bind(this)} className="f_btn">GET NEW CONNECTION</button>
+              </div>
+            : 
+              <div className="group">
+                <button onClick={this.ValidatePin.bind(this)} className="f_btn">Next</button>
+              </div>
+           }
+          
         </div>
       </div>
     );

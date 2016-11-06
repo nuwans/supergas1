@@ -1,8 +1,8 @@
 import React from "react";
 import {Link } from "react-router";
 import LabelInput from '../components/LabelInput';
-import Input from '../components/TextInput';
-import LabelSelect from '../components/LabelSelect';
+/*import Input from '../components/TextInput';*/
+/*import LabelSelect from '../components/LabelSelect';*/
 import LabelInputFull from '../components/LabelInputFull';
 import FloatingSelect from '../components/FloatingSelect';
 import FloatingInput from '../components/FloatingInput';
@@ -19,7 +19,6 @@ export default class Home extends React.Component {
     }
   } 
   handleChange(name,value){
-    console.log(name);
     var temp={};
     temp[name]=value;
     this.setState(temp);

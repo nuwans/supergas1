@@ -4,6 +4,10 @@ import { bindActionCreators } from 'redux';
 import actions from '../redux/actions';
 import Header from '../components/Header';
 class App extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    console.log(this.props)
+  } 
   componentWillMount(){
       console.log(this.props);
 
@@ -12,7 +16,7 @@ class App extends React.Component {
     const { location } = this.props;
     return (
       <div className="main_wrapper">
-        {/*<Header actions={this.props.actions}  user={this.props.user}></Header>*/}
+        {<Header actions={this.props.actions} location={this.props.location}  user={this.props.user}></Header>}
         <div  className="content_wrap">
           {this.props.children}
         </div>

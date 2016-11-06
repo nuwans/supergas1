@@ -13,20 +13,22 @@ export default class Header extends React.Component {
                 <div className="h_s_title">Online</div>
               </div>:
               <div className="h_content"> 
-                <div className="h_title">New Connection</div>
+                <div className="h_title">
+                 {this.props.location.pathname=="/new" ? "New Connection":"Complaints"}
+                </div>
               </div>
             }
             
             <div className="h_options">  <img src="/images/header/more.svg"></img> </div>
           </div>
-          <div className="nav_tab_wrap">
+          {/*<div className="nav_tab_wrap">
             <div className="nav_tab">
                CHAT
             </div>
             <div className="nav_tab n_t_selected">
                REFIL
             </div>
-          </div>
+          </div>*/}
         </div>
     );
   }
