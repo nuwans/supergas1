@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, Redirect, hashHistory, browserHistory } from 'react-router';
 import App from '../pages/App';
 import AppWithDropDown from '../pages/AppWithDropDown';
 import AppWithRadio from '../pages/AppWithRadio';
@@ -36,7 +36,7 @@ let initialState = {
 let store = configureStore(initialState)
 render(
   <Provider store={store}>
-     <Router history={browserHistory}>
+     <Router history={hashHistory}>
         <Route  component={App}>
           <Route path="complain" component={Complains}></Route>
           <Route path="new" component={NewConnection}></Route>
