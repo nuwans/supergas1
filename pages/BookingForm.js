@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import actions from '../redux/actions';
 import {Link } from "react-router";
 import LabelInput from '../components/LabelInput';
 /*import Input from '../components/TextInput';*/
@@ -8,33 +11,48 @@ import FloatingSelect from '../components/FloatingSelect';
 import FloatingInput from '../components/FloatingInput';
 
 import DatePicker from '../components/DatePicker';
-export default class Home extends React.Component {
+class Home extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    this.state = {
-      pincode: '4646464',
-      Name:'',
-      Address:''
-    }
+    this.state = this.props.accounts[0];
   } 
   handleChange(name,value){
     var temp={};
     temp[name]=value;
     this.setState(temp);
   }
-  
+  proceedToPayment(state){
+    let message = JSON.stringify(state);
+    window.jsInterface.processQuickOrder(JSON.stringify({
+        "amount":+900,
+        "message":'',
+        "openOnlinePayment": true,
+        "createPaymentRequest": false,
+        "comments": message
+    })); 
+  }
+  componentWillMount(){
+    window.hideAll();
+  } 
   render() {
     return (
       <div className="content">
-        <div className="form">
-          <LabelInput name="name" label="Name" handler={this.handleChange.bind(this)}></LabelInput>
-          <LabelInput name="AccountNumber" label="Account No." handler={this.handleChange.bind(this)}></LabelInput>
+        <div className="form">          
+          <FloatingInput 
+              labelName="Name"
+              type="text"
+              name="Name"
+              handler={this.handleChange.bind(this)} 
+            />           
+          {/*<LabelInput name="AccountNumber" label="Account No." handler={this.handleChange.bind(this)}>
+            10000001010
+          </LabelInput>*/}
           <FloatingSelect 
               labelName="Franchise"
               error={false}
               name="Franchise"
-              options={['HSR Layout','14 KG', '15 KG']}
+              options={['HSR Layout','Bommanahalli','BTM Layout']}
               handler={this.handleChange.bind(this)} 
             />
           <FloatingSelect 
@@ -47,7 +65,6 @@ export default class Home extends React.Component {
           <FloatingInput 
               labelName="Full Address"
               type="text"
-              error={this.state.PincodeError}
               name="Address"
               handler={this.handleChange.bind(this)} 
             />  
@@ -66,10 +83,10 @@ export default class Home extends React.Component {
              </div>
              <div className="half right">
               <FloatingSelect 
-                  labelName="Dilivary Slot"
+                  labelName="Delivery Slot"
                   error={false}
                   name="Franchise"
-                  options={['Afternoon','14 KG', '15 KG']}
+                  options={['Morning','Afternoon','Evening']}
                   handler={this.handleChange.bind(this)} 
                 />
               </div>
@@ -77,7 +94,7 @@ export default class Home extends React.Component {
           
           
            <div className="group">
-            <button className="f_btn">Pay</button>
+            <button className="f_btn" onClick={this.proceedToPayment.bind(this,this.state)}>Pay</button>
           </div>
           
         </div>
@@ -85,3 +102,13 @@ export default class Home extends React.Component {
     );
   }
 }
+function mapStateToProps(state) {
+  console.log('state>>>>',state);
+  return state
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

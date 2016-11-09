@@ -30,11 +30,15 @@ export default class Register extends React.Component {
     }
   }
   confirmAndRoute(){
+    console.log('asdsad');
     if(this.state.otp==this.state.dummyNumber){
       this.setState({ OTP:false});
-      this.props.router.push('/new');
     }
+    this.props.router.push('/booking');
   }
+  componentWillMount(){
+    window.showAll();
+  }  
   render() {
     return (
       <div className="content">

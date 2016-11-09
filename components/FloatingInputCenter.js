@@ -21,7 +21,7 @@ export default class FloatingInputCenter extends React.Component {
           required
           autoCapitalize="off"
           autoComplete="off"
-          autoCorrect="off" />
+          autoCorrect="off" style={{textAlign:'center'}} />
         <span className={this.props.error ? "highlight invalid" : "highlight"}></span>
         <span className={this.props.error ? "bar invalid" :"bar"}></span>
         <label className={this.props.error ? "invalid" : "normal"}>{this.props.labelName}</label>

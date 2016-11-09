@@ -14,9 +14,9 @@ export default class Input extends React.Component {
   render() {
     return (
 
-     <div className="l_a_c">
-            <div className="l_a_c_label"> {this.props.label} </div>
-            <input className="l_a_c_control"></input>
+     <div className="group">
+            <label className="small"> {this.props.label} </label>
+            <div className="inputMaterial">{this.props.children}</div>
      </div>   
     );
   }
