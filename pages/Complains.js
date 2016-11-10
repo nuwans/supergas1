@@ -21,6 +21,7 @@ export default class Complains extends React.Component {
   } 
   componentDidMount(){
       this.setState({option:ComplainOptions[0]});
+      window.hideAll();
   }
   getRadioOptions(){
       return ComplainOptions.map(function(item,i){

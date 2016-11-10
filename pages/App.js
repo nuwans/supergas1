@@ -6,10 +6,10 @@ import Header from '../components/Header';
 class App extends React.Component {
   constructor(props, context) {
     super(props, context)
-    console.log(this.props)
+    console.log('App props',this.props)
   } 
   componentWillMount(){
-      console.log(this.props);
+      console.log('App props',this.props);
 
   }  
   render() {

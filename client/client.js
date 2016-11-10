@@ -8,6 +8,7 @@ import AddAcount from '../pages/AddAccount';
 import NewConnection from '../pages/NewConnection';
 import Complains from '../pages/Complains';
 import BookingForm from '../pages/BookingForm';
+import mobile from './mobile';
 /*import Homepage2 from '../pages/Home2';
 import Homepage3 from '../pages/Home3';
 import Homepage3Pop from '../pages/Home3PopUP';
@@ -19,18 +20,24 @@ import configureStore from '../redux/store';
 import { Provider } from 'react-redux';
 require("../css/style.css");
 
+window.jsInterface = mobile();
+window.qoFocus = ()=>{};
+window.showAll = ()=> {
+    window.jsInterface.showActionBar();
+};
+window.hideAll = ()=> {
+    window.jsInterface.hideActionBar();
+};
+
 let initialState = {
-  todos: [{
-    id: 0,
-    completed: false,
-    text: 'Initial todo for demo purposes'
-  }],
+  todos: [],
   user: {
     username: 'Nuwan',
     id: 1,
     logged:false,
     selectedTab:'REFIL'
-  }
+  },
+  accounts:[]
 }
 
 let store = configureStore(initialState)

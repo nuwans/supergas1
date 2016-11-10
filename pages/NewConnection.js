@@ -1,13 +1,16 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {Link } from "react-router";
+import actions from '../redux/actions';
 import Input from '../components/TextInput';
 import FloatingInput from '../components/FloatingInput';
 import FloatingSelect from '../components/FloatingSelect';
-export default class Home extends React.Component {
+class Home extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    console.log(this.props);
+    console.log('this.props',this.props);
     console.log(this.state);
     this.state = {
       Pincode: '',
@@ -32,8 +35,12 @@ export default class Home extends React.Component {
     temp[name]=value;
     this.setState(temp);
   }
-  GetNewConnection(){
-    this.props.router.push('/booking');
+  GetNewConnection(state){
+    console.log('this.props',this.props.actions.addAccount(state));
+    this.props.router.push('/booking');   
+  }
+  componentWillMount(){
+    window.hideAll();
   }
   render() {
     return (
@@ -49,8 +56,7 @@ export default class Home extends React.Component {
           { this.state.showForm ? 
             <FloatingInput 
               labelName="Name"
-              type="text"
-              error={this.state.PincodeError}
+              type="text"              
               name="Name"
               handler={this.handleTextInput.bind(this)} 
             />
@@ -60,7 +66,6 @@ export default class Home extends React.Component {
             <FloatingInput 
               labelName="Full Address"
               type="text"
-              error={this.state.PincodeError}
               name="Address"
               handler={this.handleTextInput.bind(this)} 
             />
@@ -69,7 +74,6 @@ export default class Home extends React.Component {
           { this.state.showForm ? 
             <FloatingSelect 
               labelName="Connection Type"
-              error={this.state.PincodeError}
               name="ConnectionType"
               options={['13 KG','14 KG', '15 KG']}
               handler={this.handleTextInput.bind(this)} 
@@ -78,7 +82,7 @@ export default class Home extends React.Component {
            }
            { this.state.showForm ? 
               <div className="group">
-                <button onClick={this.GetNewConnection.bind(this)} className="f_btn">GET NEW CONNECTION</button>
+                <button onClick={this.GetNewConnection.bind(this,this.state)} className="f_btn">GET NEW CONNECTION</button>
               </div>
             : 
               <div className="group">
@@ -91,3 +95,12 @@ export default class Home extends React.Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return state
+}
+function mapDispatchToProps(dispatch) {
+ return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -10,11 +10,22 @@
   margin-left:16px;
   font-weight: 100;
 }
+.group2 {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom:16px;
+  margin-right:16px;
+  margin-left:16px;
+  font-weight: 100;
+}
 
 .inputMaterial {
   font-size: 16px;
   display: block;
   width: 100%;
+  color: black;
+  text-align: left;
+  font-weight: normal;
   border: none;
   padding-bottom: 7px;
   border-bottom: 1px solid #ABABAB;
@@ -487,7 +498,7 @@ select:focus{
     text-align: left;
 }
 .l_a_c_label{
-    width: 35%;
+    width: 100%;
     float: left;
     text-align: left;
     line-height: 40px;
@@ -495,11 +506,13 @@ select:focus{
 }
 
 .l_a_c_control{
+    width: 100%;
     border: none;
     color: #333333;
     float: left;
     line-height: 40px;
     font-family: "Roboto";
+    text-align: left;
 }
 
 .half_wrap{

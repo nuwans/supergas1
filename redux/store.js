@@ -8,6 +8,6 @@ let finalCreateStore = compose(
 )(createStore)
 
 
-export default function configureStore(initialState = { todos: [], user: {} }) {
+export default function configureStore(initialState = { accounts: [], user: {} }) {
   return finalCreateStore(rootReducer, initialState)
 }
