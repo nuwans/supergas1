@@ -9,13 +9,24 @@ import LabelInput from '../components/LabelInput';
 import LabelInputFull from '../components/LabelInputFull';
 import FloatingSelect from '../components/FloatingSelect';
 import FloatingInput from '../components/FloatingInput';
+import FloatingDate from '../components/FloatingDate';
+import moment from 'moment';
+
 
 import DatePicker from '../components/DatePicker';
 class Home extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    this.state = this.props.accounts[0];
+    this.state = {
+      acounts:this.props.accounts[0],
+      defaultDate:moment().add(1,'d').format("YYYY-MM-DD"),
+      mindate:moment().format("YYYY-MM-DD"),
+      maxdate:moment().add(3,'d').format("YYYY-MM-DD"),
+      currentHour:moment().format('HH'),
+      Date:moment().add(1,'d').format("YYYY-MM-DD")
+    };
+    
   } 
   handleChange(name,value){
     var temp={};
@@ -32,9 +43,25 @@ class Home extends React.Component {
         "comments": message
     })); 
   }
+
   componentWillMount(){
     window.hideAll();
   } 
+  getDeliverySlots(){
+    var now=moment();
+    var selectedDate=moment(this.state.Date);
+    var diference=selectedDate.diff(now,'hours');
+    console.log(diference);
+    if(diference<-15){
+       return ['Evening'];
+    } 
+    else if((diference>= -15 )&&(diference<-12)){
+       return ['Afternoon','Evening'];
+    }
+    else if(diference>= -9 ){
+       return ['Morning','Afternoon','Evening'];
+    } 
+  }
   render() {
     return (
       <div className="content">
@@ -72,11 +99,13 @@ class Home extends React.Component {
          
           <div className="half_wrap">
              <div className="half left">
-              <FloatingInput 
+              <FloatingDate 
                 labelName="Date"
                 type="date"
                 error={false}
-                value="2016-01-01"
+                min={this.state.mindate}
+                value={this.state.defaultDate}
+                max={this.state.maxdate}
                 name="Date"
                 handler={this.handleChange.bind(this)} 
               />
@@ -86,7 +115,7 @@ class Home extends React.Component {
                   labelName="Delivery Slot"
                   error={false}
                   name="Franchise"
-                  options={['Morning','Afternoon','Evening']}
+                  options={this.getDeliverySlots()}
                   handler={this.handleChange.bind(this)} 
                 />
               </div>
